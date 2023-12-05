@@ -31,3 +31,16 @@ button {
 button:hover {
   background-color: #005184;
 }
+
+.uploaded-images ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+
+.uploaded-images li {
+  flex: 0 0 calc(33.33% - 10px);  /* Adjust the width as needed */
+  box-sizing: border-box;
+}
