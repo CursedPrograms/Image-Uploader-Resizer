@@ -20,9 +20,18 @@ def get_file_contents(repo_owner, repo_name, file_path):
         print(f"Error: {response.status_code}")
         return None
 
+
+def get_uploaded_images():
+    upload_folder = 'static/input'
+    if os.path.exists(upload_folder):
+        return [f for f in os.listdir(upload_folder) if os.path.isfile(os.path.join(upload_folder, f))]
+    else:
+        return []
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    uploaded_images = get_uploaded_images()
+    return render_template('index.html', uploaded_images=uploaded_images)
 
 
 @app.route('/upload', methods=['POST'])
@@ -36,7 +45,7 @@ def upload():
         return 'No selected file'
 
     if file:
-        upload_folder = 'input'
+        upload_folder = 'static/input'
         if not os.path.exists(upload_folder):
             os.makedirs(upload_folder)
 
