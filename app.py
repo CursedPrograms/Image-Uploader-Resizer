@@ -24,7 +24,10 @@ def get_file_contents(repo_owner, repo_name, file_path):
 def get_uploaded_images():
     upload_folder = 'static/input'
     if os.path.exists(upload_folder):
-        return [f for f in os.listdir(upload_folder) if os.path.isfile(os.path.join(upload_folder, f))]
+        files = [f for f in os.listdir(upload_folder) if os.path.isfile(os.path.join(upload_folder, f))]
+        # Sort files based on modification time (newest first)
+        files.sort(key=lambda x: os.path.getmtime(os.path.join(upload_folder, x)), reverse=True)
+        return files
     else:
         return []
 
