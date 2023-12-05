@@ -1,7 +1,14 @@
 @charset "utf-8";
+
+body {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -11,6 +18,7 @@ form {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 input {
   margin-bottom: 10px;
   padding: 10px;
@@ -19,6 +27,7 @@ input {
   background-color: #fff;
   color: #333;
 }
+
 button {
   background-color: #004067;
   color: #fff;
@@ -28,19 +37,24 @@ button {
   cursor: pointer;
   font-size: 16px;
 }
+
 button:hover {
   background-color: #005184;
 }
 
+.uploaded-images {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .uploaded-images ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
   gap: 10px;
   padding: 0;
 }
 
 .uploaded-images li {
-  flex: 0 0 calc(33.33% - 10px);  /* Adjust the width as needed */
+  flex: 0 0 auto;
   box-sizing: border-box;
 }
