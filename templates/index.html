@@ -11,22 +11,23 @@
 <link href="../static/styles/uploader.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>Image Uploader</h1>
-<form action="/upload" method="post" enctype="multipart/form-data">
-  <input type="file" name="file" accept="image/png, image/jpeg" required>
-  <button type="submit">Upload</button>
-</form>
-{% if uploaded_images %}
-<div class="uploaded-images">
-  <h2>Uploaded Images:</h2>
-  <ul>
-    {% for image in uploaded_images %}
-      <li><img src="{{ url_for('static', filename='input/' + image) }}" alt="{{ image }}"></li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-<footer>呪われた エンターテイメント <br>
-  © Cursed Entertainment 2023</footer>
+  <h1>Image Uploader</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/png, image/jpeg" required>
+    <button type="submit">Upload</button>
+  </form>
+  {% if uploaded_images %}
+  <div class="uploaded-images">
+    <h2>Uploaded Images:</h2>
+    <ul>
+      {% for image in uploaded_images %}
+        <li><img src="{{ url_for('static', filename='input/' + image) }}" alt="{{ image }}"></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="icon-container"> <a href="https://www.facebook.com/CursedEntertainment/"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/FB_icon-01.png" alt="Facecbook" class="icon-img"> </a> <a href="https://www.instagram.com/cursed.entertainment/"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/instagram_icon-01.png" alt="Instagram" class="icon-img"> </a> <a href="https://www.youtube.com/channel/UCmTHNMTp-i1TY-jxMqSjBpw"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/YT_icon-01.png" alt="YouTube" class="icon-img"> </a> <a href="https://www.tiktok.com/@cursedentertainment"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/TT_icon-01-01.png" alt="Tiktok" class="icon-img"> </a> <a href="https://www.behance.net/cursedentertainment"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/behanceIcon-01.png" alt="Behance" class="icon-img"> </a> <a href="https://github.com/CursedPrograms"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/GH_icon-01.png" alt="GitHub" class="icon-img"> </a> <a href="https://cursed-entertainment.itch.io/"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/itch_icon-01.png" alt="itch.io" class="icon-img"> </a> <a href="https://gamejolt.com/@CursedEntertainment"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/GJ_icon-01.png" alt="GameJolt" class="icon-img"> </a> <a href="https://soundcloud.com/cursedentertainment"> <img src="https://raw.githubusercontent.com/CursedPrograms/cursedentertainment/main/images/SC_icon-01.png" alt="Behance" class="icon-img"> </a> </div>
+  <footer>呪われた エンターテイメント <br>
+    © Cursed Entertainment 2023</footer>
 </body>
 </html>
