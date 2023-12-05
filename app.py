@@ -9,23 +9,14 @@ app = Flask(__name__)
 def get_file_contents(repo_owner, repo_name, file_path):
     api_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
     
-    # Make a GET request to the GitHub API
     response = requests.get(api_url)
-    
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the response JSON
         data = response.json()
-        
-        # Decode the content of the file (assuming it's Base64 encoded)
         content = data.get('content', '')
-        content = content.encode('ascii')  # GitHub API returns content as Base64-encoded string
-        content = content.decode('base64')  # Python 2
-        # content = base64.b64decode(content).decode('utf-8')  # Python 3
-        
+        content = content.encode('ascii') 
+        content = content.decode('base64')  
         return content
     else:
-        # Print an error message if the request was not successful
         print(f"Error: {response.status_code}")
         return None
 
@@ -55,7 +46,7 @@ def upload():
             img.save(resized_file_path)
             
         time.sleep(3)
-        
+
         return redirect(url_for('index'))
 
 
