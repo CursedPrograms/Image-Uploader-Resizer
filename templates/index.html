@@ -16,6 +16,16 @@
   <input type="file" name="file" accept="image/png, image/jpeg" required>
   <button type="submit">Upload</button>
 </form>
+{% if uploaded_images %}
+<div class="uploaded-images">
+  <h2>Uploaded Images:</h2>
+  <ul>
+    {% for image in uploaded_images %}
+      <li><img src="{{ url_for('static', filename='input/' + image) }}" alt="{{ image }}"></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
 <footer>呪われた エンターテイメント <br>
   © Cursed Entertainment 2023</footer>
 </body>
