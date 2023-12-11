@@ -9,6 +9,7 @@
 <link href="../static/styles/uploader.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <div class="content">
   <h1>Image Uploader</h1>
   <form action="/upload" method="post" enctype="multipart/form-data">
     <input type="file" name="file" accept="image/png, image/jpeg" required>
@@ -22,7 +23,7 @@
         <li><img src="{{ url_for('static', filename='input/' + image) }}" alt="{{ image }}"></li>
       {% endfor %}
     </ul>
-  </div>
+  </div>  </div>
   {% endif %}
 <div class="icons_container">
     <iframe src="https://cursedprograms.github.io/cursedentertainment/icons/icon-container.html" frameborder="0"></iframe>
