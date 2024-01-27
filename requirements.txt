@@ -1,2 +1,4 @@
-Flask==2.1.1
-Pillow==8.3.2
+flask==2.1.1
+pillow==10.2.0
+requests==2.31.0
+werkzeug==2.0.2
